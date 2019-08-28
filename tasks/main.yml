@@ -7,6 +7,7 @@
     dest: '/tmp/{{ test_name }}.yaml'
 - name: Upload benchmark template
   uri:
+    remote_src: yes
     src: '/tmp/{{ test_name }}.yaml'
     method: POST
     headers:
