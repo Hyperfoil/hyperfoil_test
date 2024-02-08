@@ -8,7 +8,7 @@
   - name: Gather facts about controller
     when: hostvars[groups[hyperfoil_controller_group][0]]['ansible_hostname'] is undefined
     setup: {}
-    delegate_to: groups[hyperfoil_controller_group][0]
+    delegate_to: "{{ groups[hyperfoil_controller_group][0] }}"
     delegate_facts: true
   - name: Set hyperfoil_controller_host
     set_fact:
